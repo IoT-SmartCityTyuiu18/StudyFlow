@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <style>
+
+    </style>
+
+    <title>Hello, world!</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        
+        .bar_chart_container {
+            border: 1px solid black;
+            display: grid;
+            height: 500px;
+            grid-template-columns: 50px 1fr;
+        }
+        
+        .percent {
+            grid-column: 1;
+        }
+        
+        .column {
+            width: 50px;
+            height: 100%;
+            display: grid;
+            align-items: end;
+        }
+        
+        .column_height {
+            height: 70%;
+            background-color: red;
+        }
+        
+        .block_column {
+            display: grid;
+            grid-column: 2;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .bar_chart_container p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .block_height {
+            background-color: blue;
+            height: 100%;
+            display: grid;
+            grid-template-rows: repeat( 5, minmax(20%, 1fr));
+        }
+        
+        .bar_chart_container div {
+            /* align-items: end; */
+            /* display: grid; */
+            border-bottom: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar_chart_container">
+        <div class="block_height">
+            <div style="" class="percent">
+                <p>100</p>
+            </div>
+            <div style="" class="percent">
+                <p>80</p>
+            </div>
+            <div style="" class="percent">
+                <p>60</p>
+            </div>
+            <div style="" class="percent">
+                <p>40</p>
+            </div>
+            <div style="" class="percent">
+                <p>20</p>
+            </div>
+            <div style="" class="percent">
+                <p>0</p>
+            </div>
+        </div>
+        <div class="block_column">
+            <div class="column column_item_1">
+                <div class="column_height">
+                    123
+                </div>
+            </div>
+            <div class="column column_item_2">
+                <div class="column_height">
+                    123
+                </div>
+            </div>
+            <div class="column column_item_3">
+                <div class="column_height">
+                    123
+                </div>
+            </div>
+            <div class="column column_item_4">
+                <div class="column_height">
+                    123
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
