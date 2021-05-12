@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% load static%}
+
+            {% block header %}
+            <div class="header">
+                <h1 style="padding-left: 32px;" class="h1_main"><a href="#">Мои курсы <img src={% static 'img/icons/arrow_next.png' %} alt=""></a></h1>
+            </div>
+            {% endblock %}
+            {% block content %}
+            <div class="white">
+                <div class="white_content">
+                    <div class="block_course" style="padding-top: 32px;">
+                        <div>
+                            <ul>
+                                <li class="block_img"><img src={% static "img/Design.png" %} alt=""></li>
+                                <li class="block_heading">
+                                    <p>Основы графического дизайна</p>
+                                </li>
+                                <li class="block_extend"><span>90%</span> выполнено</li>
+                                <li class="block_progress_bar">
+                                    <progress id="line_progress" max="100" value="90"></progress>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="block_img"><img src={% static "img/Coding.png" %} alt=""></li>
+                                <li class="block_heading">
+                                    <p>Базовый JavaScript</p>
+                                </li>
+                                <li class="block_extend">34% выполнено</li>
+                                <li class="block_progress_bar">
+                                    <progress id="line_progress" max="100" value="34"></progress>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
+                                <li class="block_img"><img src={% static "img/Blog.png" %} alt=""></li>
+                                <li class="block_heading">
+                                    <p>UX-копирайтинг</p>
+                                </li>
+                                <li class="block_extend">85% выполнено</li>
+                                <li class="block_progress_bar">
+                                    <progress id="line_progress" max="100" value="85"></progress>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h1 class="h1_main"><a href="#">Статистика <img src={% static "img/icons/arrow_next.png" %} alt=""></a></h1>
+                    <div class="block_statisctic">
+                        <div style="display: grid; justify-content: left;">
+                            <h1 class="h1_extend">4,5</h1>
+                            <p>Средний балл</p>
+                        </div>
+                        <div>
+                            <h1 class="h1_extend">8</h1>
+                            <p>Тестирований осталось</p>
+                        </div>
+                        <div style="display: grid; justify-content: right;">
+                            <h1 class="h1_extend">2</h1>
+                            <p>Недель до конца обучения</p>
+                        </div>
+                    </div>
+                    <h1 class="h1_main"><a href="#">Направления <img src={% static "img/icons/arrow_next.png" %} alt=""></a></h1>
+                    <div class="block_graph">
+                        <div>
+                            graph
+                        </div>
+                        <div class="name_prof">
+                            <p><span style="background: rgba(85, 46, 255, 0.8);">&nbsp</span>Графический дизайнер</p>
+                            <p><span style="background: #B7A9FD">&nbsp</span>Руководитель разработки ПО</p>
+                            <p><span style="background: #866BFE;">&nbsp</span>Руководитель в области ИТ</p>
+                            <p><span style="background: #552EFF">&nbsp</span>Программист</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="other">
+                <div class="other_content">
+                    <div class="calendar" style="padding-top: 36px;">
+                        <table id="calendar2">
+                            <thead>
+                                <tr>
+                                    <td><img src={% static "img/icons/prev.png" %} alt="">
+                                        <td colspan="5">
+                                            <td><img src={% static "img/icons/next.png" %} alt="">
+                                                <tr>
+                                                    <td>Пн</td>
+                                                    <td>Вт</td>
+                                                    <td>Ср</td>
+                                                    <td>Чт</td>
+                                                    <td>Пт</td>
+                                                    <td>Сб</td>
+                                                    <td>Вс</td>
+                                                </tr>
+                                            </td>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="future_events">
+                        <h1 class="h1_main"><a href="#" style="font-size: 32px;">Предстоящие события <img src={% static "img/icons/arrow_next.png" %} alt=""></a></h1>
+                        <div class="block_event">
+                            <div class="item_blur" style="margin-top: 32px;">
+                                <div class="info_blur">
+                                    <p>Промежуточное тестирование на тему “Основы типографики”</p>
+                                    <ul>
+                                        <li>00:00 - 23:59</li>
+                                        <li>08.04</li>
+                                    </ul>
+                                </div>
+                                <div class="icon_blur">
+                                    <a href="#"><img src={% static "img/icons/more.png" %} alt=""></a>
+                                </div>
+                            </div>
+                            <div class="item_blur">
+                                <div class="info_blur">
+                                    <p>Промежуточное тестирование на тему “Основы типографики”</p>
+                                    <ul>
+                                        <li>00:00 - 23:59</li>
+                                        <li>22.04</li>
+                                    </ul>
+                                </div>
+                                <div class="icon_blur">
+                                    <a href="#"><img src={% static "img/icons/more.png" %} alt=""></a>
+                                </div>
+                            </div>
+                            <div class="item_blur">
+                                <div class="info_blur">
+                                    <p>Вебинар “Оформление кейса и подготовка портфолио”</p>
+                                    <ul>
+                                        <li>16:30 - 19:00</li>
+                                        <li>30.04</li>
+                                    </ul>
+                                </div>
+                                <div class="icon_blur">
+                                    <a href="#"><img src={% static "img/icons/more.png" %} alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        {% endblock %}
+{% block scripts %}
+<script>
+    var ctx = $('#myChart');
+
+    ctx.height(100);
+
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["APP1", "APP2", "APP3", "APP4", "APP5"],
+            datasets: [{
+                data: [25, 61, 47, 45, 30],
+                label: "Response > 5",
+                borderColor: "#5151A1",
+                backgroundColor: "#5151A1"
+            }, {
+                data: [22, 38, 53, 17, 55],
+                label: "Response <= 5",
+                borderColor: "#408040",
+                backgroundColor: "#408040"
+            }]
+        },
+        maintainAspectRatio: false,
+        options: {
+            responsive: true,
+            legend: {
+                position: "right",
+                align: "middle"
+            },
+            scales: {
+
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        //max: 100,
+                        callback: function(value) {
+                            return value + "%"
+                        }
+                    },
+                    scaleLabel: {
+                        display: true
+                            //labelString: "Percentage"
+                    }
+                }]
+            }
+        }
+    });
+</script>
+<script src={% static "js/main.js" %}></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+{% endblock %}

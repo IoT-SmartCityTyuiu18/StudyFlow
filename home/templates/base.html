@@ -1,0 +1,86 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    {% block title %}<title>StudyFlow</title> {% endblock %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <link rel="stylesheet" href={% static "css/media.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href={% static "css/reset.css" %}>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main_container" style="width: 1440px; max-height: 1080px; margin: 0 auto;">
+        <div class="grid_container">
+            {% block menu %}
+            <div class="menu">
+                <div class="logo">
+                    <a href="/"><img src={% static "img/Logo.png" %} alt=""></a>
+                </div>
+                {% block header %} {% endblock %}
+                <div class="profile">
+                    <div>
+                        <a href="#"><img src={% static "img/icons/notifications.png" %} alt=""></a>
+                    </div>
+                    <div style="display: grid;justify-content: end;">
+                        <ul>
+                            <li><span>Иван И.</span></li>
+                            <li><img class="profile_photo" src={% static "img/profile.png" %} alt=""></li>
+                            <li>
+                                <a href="#"><img src={% static "img/icons/logout.png" %} alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+            {% block sidebar %}
+            <div class="sidebar">
+                <div class="sidebar_content">
+                    <div class="sidebar_menu" style="padding-top: 84px;">
+                        <ul>
+
+                            <li>
+                                <a class="tip" href="#"><img src={% static "img/icons/home.png" %} alt=""></a>
+                            </li>
+                            <li>
+                                <a class="tip" href="#"><img src={% static "img/icons/chart.png" %} alt=""></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="tip" href="#"><img src={% static "img/icons/files.png" %} alt=""></a>
+                            </li>
+                            <li>
+                                <a class="tip" href="#"><img src={% static "img/icons/book.png" %} alt=""></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="tip" href="#"><img src={% static "img/icons/message.png" %} alt=""></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="tip" href="#"><img class="" src={% static "img/icons/calendar.png" %} alt=""></a>
+                            </li>
+                            <li>
+                                <a class="tip" href="#"><img src={% static "img/icons/more.png" %} alt=""></a>
+                            </li>
+                            <li>
+                                <a class="tip" href="#"><img src={% static "img/icons/settings.png" %} alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+            {% block content %} {% endblock %}
+        </div>
+    </div>
+</body>
+{% block scripts %} {% endblock %}
+</html>

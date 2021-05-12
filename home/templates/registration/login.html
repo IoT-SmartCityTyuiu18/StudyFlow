@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <link rel="stylesheet" href={% static "css/media.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href={% static "css/reset.css" %}>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background">
+        <div class="white_signin">
+            <div class="grid_container_signin">
+                <div class="logo_signin">
+                    <img src={% static "img/logo_signin.png" %} alt="">
+                    <span>Study Flow</span>
+                    <img class="wave_header" src={% static "img/wave.png" %} alt="">
+                </div>
+                <div class="left_sigin">
+
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <h1 class="h1_signin">Войти в систему</h1>
+                        <p>{{ form.username.label_tag }}</p>
+                        <p>{{ form.username }}</p>
+                        <p>{{ form.password.label_tag }}</p>
+                        <p>{{ form.password }}</p>
+                        <p><input type="submit" value="Войти" /><input type="hidden" name="next" value="{{ next }}" /><span><a class="forget_a" href="{% url 'password_reset' %}">Забыли пароль?</a></span></p>
+
+                    </form>
+
+                </div>
+                <div class="right_sigin">
+
+                    <img src={% static "img/login.png" %} alt="">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

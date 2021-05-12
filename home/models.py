@@ -6,7 +6,7 @@ from django import forms
 
 
 # Create your models here.
-class Group(models.Model):
+class Class(models.Model):
     title = models.CharField(max_length=50, unique=True)
 
 
@@ -25,7 +25,7 @@ class Student(models.Model):
     gender = models.CharField(max_length=10, choices=GENDER)
     birth_date = models.DateField(default=timezone.now)
     degree = models.CharField(max_length=100, choices=DEGREE, help_text='Current studying level')
-    current_group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    current_class = models.ForeignKey(Class, on_delete=models.CASCADE)
 
     # Profile data
     email = models.EmailField(unique=True)
