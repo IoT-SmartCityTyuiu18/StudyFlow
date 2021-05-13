@@ -949,7 +949,8 @@ i.fa+input {
     padding-left: 64px;
 }
 
-.search {
+.search,
+.search_student_profile {
     position: relative;
 }
 
@@ -961,6 +962,21 @@ i.fa+input {
     border-radius: 1.5em;
     border: 1px solid;
     padding: 0 1.5em;
+}
+
+.search_student_profile input {
+    display: block;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 1.5em;
+    outline: none;
+    border: none;
+    background: linear-gradient(144.07deg, rgba(255, 255, 255, 0.68) -9.11%, rgba(255, 255, 255, 0.544) 175.55%);
+    box-shadow: 50px 60px 100px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(85px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 25px;
 }
 
 .search button {
@@ -2040,4 +2056,221 @@ i.fa+input {
     grid-column: 2;
     grid-row: 2;
     margin: 4px 0;
+}
+
+
+/* student_profile_review */
+
+.student_profile h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.01em;
+    color: var(--h1-color);
+    margin: 48px 0 40px 0;
+}
+
+.search_student_profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.search_student_profile p:nth-child(1) {
+    grid-column: 1 / span 2;
+}
+
+.search_student_profile p:nth-child(2) {
+    grid-column: 1;
+}
+
+.search_student_profile p:nth-child(3) {
+    grid-column: 2;
+}
+
+.search_student_profile p:nth-child(2) select,
+.search_student_profile p:nth-child(3) select {
+    width: 100%;
+    background: linear-gradient(144.07deg, rgba(255, 255, 255, 0.68) -9.11%, rgba(255, 255, 255, 0.544) 175.55%);
+    box-shadow: 50px 60px 100px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(85px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    padding: 16px 24px;
+}
+
+.select_arrow {
+    position: relative;
+    display: inline-block;
+}
+
+.select_arrow:after {
+    content: url(../img/icons/icon_change.png);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1;
+    width: 24px;
+    height: 100%;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.search_student_profile select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search_student_profile input[type="search"]::-webkit-input-placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height, or 137% */
+    letter-spacing: 0.01em;
+    color: #A6ACBE;
+}
+
+.search_student_profile input[type="search"]::-moz-placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height, or 137% */
+    letter-spacing: 0.01em;
+    color: #A6ACBE;
+}
+
+.search_student_profile select {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height, or 137% */
+    letter-spacing: 0.01em;
+    color: #A6ACBE;
+}
+
+.search_student_profile option:not(:first-of-type) {
+    color: black;
+}
+
+.student_photo_profile div:nth-child(1) {
+    width: 152px;
+    height: 152px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.student_photo_profile img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.student_photo_profile {
+    display: grid;
+    grid-template-columns: 152px 1fr;
+    gap: 22px;
+}
+
+.student_photo_profile ul li {
+    margin-bottom: 8px;
+}
+
+.student_photo_profile ul li:nth-child(1),
+.student_photo_profile ul li:not(:nth-child(1)) span,
+.student_photo_profile ul li:not(:nth-child(1)) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    /* identical to box height, or 125% */
+    letter-spacing: 0.01em;
+    color: var(--h1-color);
+}
+
+.student_photo_profile ul li:not(:nth-child(1)) {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.student_photo_profile ul li:not(:nth-child(1)) span {
+    padding-right: 16px;
+}
+
+.student_block_info:not(:first-child) {
+    margin-top: 40px;
+}
+
+.student_block_info li:nth-child(1) {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: var(--h1-color);
+    margin-bottom: 32px;
+}
+
+.student_block_info {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: var(--h1-color);
+}
+
+.student_block_info span {
+    margin-right: 16px;
+    font-weight: 500;
+}
+
+.a_block_info {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.a_block_info a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--h1-color);
+    text-decoration: none;
+}
+
+.a_block_info p:nth-child(2) {
+    display: grid;
+}
+
+.a_student_statistic {
+    margin: 24px 0;
+}
+
+.a_student_statistic a {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: var(--h1-color);
+    text-decoration: none;
+}
+
+.a_student_statistic img {
+    vertical-align: middle;
+    margin-left: 16px;
 }
