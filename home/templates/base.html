@@ -26,15 +26,15 @@
                 {% block header %} {% endblock %}
                 <div class="profile">
                     <div>
-                        <a href="#"><img src={% static "img/icons/notifications.png" %} alt=""></a>
+                        <a href="/student/profile/notifications"><img src={% static "img/icons/notifications.png" %} alt=""></a>
                     </div>
                     <div style="display: grid;justify-content: end;">
                         <ul>
                             <li><span>{{ user.get_header_name }}</span></li>
-                            {% if student.avatar %}
-                            <li><a href="/student/profile"><img class="profile_photo" src={{ studen.avatar.url }} alt=""></a></li>
-                            {% elif student.get_gender == "female" %}
-                            <li><a href="/student/profile"><img class="profile_photo" src={% static "img/profile_female.png" %} alt=""></a></li>
+                            {% if user.student.avatar.url %}
+                            <li><a href="/student/profile"><img class="profile_photo" src={{ user.student.avatar.url }} alt=""></a></li>
+                            {% elif user.student.get_gender == "female" %}
+                            <li><a href="/student/profile"><img class="profile_photo" src={% static "img/profile_female.png" %} alt="{% static 'img/profile_male.png' %}"></a></li>
                             {% else %}
                             <li><a href="/student/profile"><img class="profile_photo" src={% static "img/profile_male.png" %} alt=""></a></li>
                             {% endif %}
@@ -67,7 +67,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="tip" href="/student/my_chat"><img src={% static "img/icons/message.png" %} alt=""></i>
+                                <a class="tip" href="/student/my_messages"><img src={% static "img/icons/message.png" %} alt=""></i>
                                 </a>
                             </li>
                             <li>

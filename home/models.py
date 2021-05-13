@@ -38,7 +38,7 @@ class Student(models.Model):
     current_class = models.ForeignKey(Class, on_delete=models.CASCADE)
 
     # Profile data
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='static/avatars/', null=True, blank=True)
 
     def get_gender(self):
