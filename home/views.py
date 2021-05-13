@@ -1,11 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
+from django.contrib.auth.decorators import login_required
+from .models import *
 
 
-#class LoginView(generic.ListView):
-#    model = student
-
-
+@login_required
 def overview(request):
     """
     Функция отображения для домашней страницы сайта.
@@ -15,4 +14,5 @@ def overview(request):
         'overview_page.html',
         context={},
     )
+
 

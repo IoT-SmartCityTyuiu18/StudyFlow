@@ -30,10 +30,16 @@
                     </div>
                     <div style="display: grid;justify-content: end;">
                         <ul>
-                            <li><span>Иван И.</span></li>
-                            <li><img class="profile_photo" src={% static "img/profile.png" %} alt=""></li>
+                            <li><span>{{ user.get_header_name }}</span></li>
+                            {% if student.avatar %}
+                            <li><a href="/student/profile"><img class="profile_photo" src={{ studen.avatar.url }} alt=""></a></li>
+                            {% elif student.get_gender == "female" %}
+                            <li><a href="/student/profile"><img class="profile_photo" src={% static "img/profile_female.png" %} alt=""></a></li>
+                            {% else %}
+                            <li><a href="/student/profile"><img class="profile_photo" src={% static "img/profile_male.png" %} alt=""></a></li>
+                            {% endif %}
                             <li>
-                                <a href="#"><img src={% static "img/icons/logout.png" %} alt=""></a>
+                                <a href={% url "logout" %}><img src={% static "img/icons/logout.png" %} alt=""></a>
                             </li>
                         </ul>
                     </div>
@@ -47,31 +53,31 @@
                         <ul>
 
                             <li>
-                                <a class="tip" href="#"><img src={% static "img/icons/home.png" %} alt=""></a>
+                                <a class="tip" href="/student"><img src={% static "img/icons/home.png" %} alt=""></a>
                             </li>
                             <li>
-                                <a class="tip" href="#"><img src={% static "img/icons/chart.png" %} alt=""></i>
+                                <a class="tip" href="/student/chart"><img src={% static "img/icons/chart.png" %} alt=""></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="tip" href="#"><img src={% static "img/icons/files.png" %} alt=""></a>
+                                <a class="tip" href="/student/my_files"><img src={% static "img/icons/files.png" %} alt=""></a>
                             </li>
                             <li>
-                                <a class="tip" href="#"><img src={% static "img/icons/book.png" %} alt=""></i>
+                                <a class="tip" href="/student/my_lib"><img src={% static "img/icons/book.png" %} alt=""></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="tip" href="#"><img src={% static "img/icons/message.png" %} alt=""></i>
+                                <a class="tip" href="/student/my_chat"><img src={% static "img/icons/message.png" %} alt=""></i>
                                 </a>
                             </li>
                             <li>
-                                <a class="tip" href="#"><img class="" src={% static "img/icons/calendar.png" %} alt=""></a>
+                                <a class="tip" href="/student/calendar"><img class="" src={% static "img/icons/calendar.png" %} alt=""></a>
                             </li>
                             <li>
-                                <a class="tip" href="#"><img src={% static "img/icons/more.png" %} alt=""></a>
+                                <a class="tip" href="/student/menu"><img src={% static "img/icons/more.png" %} alt=""></a>
                             </li>
                             <li>
-                                <a class="tip" href="#"><img src={% static "img/icons/settings.png" %} alt=""></a>
+                                <a class="tip" href="/student/settings"><img src={% static "img/icons/settings.png" %} alt=""></a>
                             </li>
                         </ul>
                     </div>
