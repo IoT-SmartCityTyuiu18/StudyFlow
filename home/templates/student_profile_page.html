@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load static%}
+
+            {% block header %}
+                <div class="header">
+                    <h1 style="padding-left: 32px;" class="h1_main"><a href="#">Обзор</a></h1>
+                </div>
+            {% endblock %}
+            {% block content %}
+            <div class="white">
+                <div class="white_content student_profile">
+                    <form action="#" class="search_student_profile">
+                        <p>
+                            <i style="line-height: 48px;" class="fa fa-search" aria-hidden="true"></i>
+                            <input type="search" placeholder="Поиск по группе, студентам">
+                        </p>
+                        <p class="select_arrow">
+                            <select name="#" id="#">
+                                <option value="" disabled selected>Выберите группу</option>
+                                <option value="#">Пункт 1</option>
+                                <option value="#">Пункт 2</option>
+                                <option value="#">Пункт 3</option>
+                            </select>
+                        </p>
+                        <p class="select_arrow">
+                            <select name="#" id="#">
+                                <option value="" disabled selected>Выберите студента</option>
+                                <option value="#">Пункт 1</option>
+                                <option value="#">Пункт 2</option>
+                                <option value="#">Пункт 3</option>
+                            </select>
+                        </p>
+                    </form>
+                    <h1>Личные данные студента</h1>
+                    <div class="student_photo_profile">
+                        <div>
+                            {% if user.student.avatar %}
+                            <img class="profile_photo" src={{ user.student.avatar.url }} alt="">
+                            {% elif user.student.get_gender == "female" %}
+                            <img class="profile_photo" src={% static "img/profile_female.png" %} alt="{% static 'img/profile_male.png' %}">
+                            {% else %}
+                            <img class="profile_photo" src={% static "img/profile_male.png" %} alt="">
+                            {% endif %}
+                            <img src="img/student_profile.png" alt="">
+                        </div>
+                        <div>
+                            <ul>
+                                <li>{{ user.get_full_name }} {{ user.student.patronymic }}</li>
+                                <li><span>Дата рождения:</span>{{ user.student.birth_date }}</li>
+                                <li><span>Страна:</span>Россия</li>
+                                <li><span>Родной город:</span>Тюмень</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="student_block_info" style="margin-top: 20px;">
+                        <li>Контактные данные</li>
+                        <li><span>Моб. телефон:</span>89044967321</li>
+                        <li><span>Email:</span>{{ user.email }}</li>
+                        <li><span>ID зачетной книжки:</span>15-01-001565</li>
+                    </ul>
+                    <ul class="student_block_info">
+                        <li>Подразделение</li>
+                        <li><span>Институт:</span>Строительный</li>
+                        <li><span>Направление:</span>Информационные системы и технологии, 09.03.02</li>
+                        <li><span>Группа:</span>ИСТб-15-1</li>
+                    </ul>
+                    <ul class="student_block_info">
+                        <li>Характеристики</li>
+                        <li class="a_block_info">
+                            <p><img src={% static "img/icons/paperclip.png" %} alt=""></p>
+                            <p><a href="#">character_10_05_15.docx</a></p>
+                        </li>
+                        <li class="a_block_info">
+                            <p><img src={% static "img/icons/paperclip.png" %} alt=""></p>
+                            <p><a href="#">character_10_05_15.docx</a></p>
+                        </li>
+                    </ul>
+                    <div class="a_student_statistic">
+                        <a href="#">Статистика по студенту <img src={% static "img/icons/arrow_next.png" %} alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="other">
+                <div class="other_content">
+                    <div class="calendar" style="padding-top: 36px;">
+                        <table id="calendar2">
+                            <thead>
+                                <tr>
+                                    <td><img src={% static "img/icons/prev.png" %} alt="">
+                                        <td colspan="5">
+                                            <td><img src={% static "img/icons/next.png" %} alt="">
+                                                <tr>
+                                                    <td>Пн</td>
+                                                    <td>Вт</td>
+                                                    <td>Ср</td>
+                                                    <td>Чт</td>
+                                                    <td>Пт</td>
+                                                    <td>Сб</td>
+                                                    <td>Вс</td>
+                                                </tr>
+                                            </td>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="future_events">
+                        <h1 class="h1_main"><a href="#" style="font-size: 32px;">Предстоящие события <img src={% static "img/icons/arrow_next.png" %} alt=""></a></h1>
+                        <div class="block_event">
+                            <div class="item_blur" style="margin-top: 32px;">
+                                <div class="info_blur">
+                                    <p>Промежуточное тестирование на тему “Основы типографики”</p>
+                                    <ul>
+                                        <li>00:00 - 23:59</li>
+                                        <li>08.04</li>
+                                    </ul>
+                                </div>
+                                <div class="icon_blur">
+                                    <a href="#"><img src={% static "img/icons/more.png" %} alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endblock %}
+
+{% block scripts %}
+<script src={% static "js/main.js" %}></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+{% endblock %}

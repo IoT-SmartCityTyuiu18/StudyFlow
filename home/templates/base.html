@@ -1,7 +1,6 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-
 <head>
     {% block title %}<title>StudyFlow</title> {% endblock %}
     <meta charset="UTF-8">
@@ -31,7 +30,7 @@
                     <div style="display: grid;justify-content: end;">
                         <ul>
                             <li><span>{{ user.get_header_name }}</span></li>
-                            {% if user.student.avatar.url %}
+                            {% if user.student.avatar %}
                             <li><a href="/student/profile"><img class="profile_photo" src={{ user.student.avatar.url }} alt=""></a></li>
                             {% elif user.student.get_gender == "female" %}
                             <li><a href="/student/profile"><img class="profile_photo" src={% static "img/profile_female.png" %} alt="{% static 'img/profile_male.png' %}"></a></li>

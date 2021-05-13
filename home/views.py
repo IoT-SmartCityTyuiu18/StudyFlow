@@ -39,3 +39,11 @@ def messages(request):
         'message_page.html',
         context={},
     )
+
+
+def s_profile(request):
+    return render(
+        request,
+        'student_profile_page.html',
+        context={},
+    )
