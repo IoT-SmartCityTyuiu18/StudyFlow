@@ -2075,6 +2075,7 @@ i.fa+input {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+    margin-top: 32px;
 }
 
 .search_student_profile p:nth-child(1) {
@@ -2090,7 +2091,8 @@ i.fa+input {
 }
 
 .search_student_profile p:nth-child(2) select,
-.search_student_profile p:nth-child(3) select {
+.search_student_profile p:nth-child(3) select,
+.header_portfolio_student_block select {
     width: 100%;
     background: linear-gradient(144.07deg, rgba(255, 255, 255, 0.68) -9.11%, rgba(255, 255, 255, 0.544) 175.55%);
     box-shadow: 50px 60px 100px rgba(0, 0, 0, 0.05);
@@ -2119,7 +2121,8 @@ i.fa+input {
     box-sizing: border-box;
 }
 
-.search_student_profile select {
+.search_student_profile select,
+.header_portfolio_student_block select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -2145,7 +2148,8 @@ i.fa+input {
     color: #A6ACBE;
 }
 
-.search_student_profile select {
+.search_student_profile select,
+.header_portfolio_student_block select {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -2155,7 +2159,8 @@ i.fa+input {
     color: #A6ACBE;
 }
 
-.search_student_profile option:not(:first-of-type) {
+.search_student_profile option:not(:first-of-type),
+.header_portfolio_student_block option:not(:first-of-type) {
     color: black;
 }
 
@@ -2273,4 +2278,59 @@ i.fa+input {
 .a_student_statistic img {
     vertical-align: middle;
     margin-left: 16px;
+}
+
+
+/* student_page */
+
+.skills_block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.header_skills_block {
+    grid-column: 1 / span 2;
+}
+
+.skills_block h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--h1-color);
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.skills_block ul li {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.01em;
+    color: #263238;
+    margin-bottom: 16px;
+}
+
+.skills_block ul li span {
+    color: var(--main-color);
+    margin-right: 32px;
+}
+
+.header_portfolio_student_block {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    margin: 48px 0 40px 0;
+    align-items: center;
+}
+
+.header_portfolio_student_block h1 {
+    margin: 0;
+}
+
+.header_portfolio_student_block select {
+    width: 240px;
 }
