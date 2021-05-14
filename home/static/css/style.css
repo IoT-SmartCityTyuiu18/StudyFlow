@@ -1690,8 +1690,49 @@ i.fa+input {
 
 .grid_marks {
     display: grid;
-    grid-template-rows: 30px 1fr;
+    /* grid-template-columns: 30px 1fr 1fr 1fr; */
+    grid-template-rows: 35px 50px;
     font-size: 20px;
+    height: 90%;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 40px 320px 200px 1fr;
+    height: 100%;
+}
+
+.row div {
+    padding: 10px;
+}
+
+.row div:nth-child(1) {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: right;
+    letter-spacing: 0.01em;
+    color: var(--main-color);
+}
+
+.row:nth-child(1) {
+    grid-row: 1;
+}
+
+.row:nth-child(2) {
+    grid-row: 2;
+}
+
+.content_row .div:not(:nth-child(1)) {
+    text-align: center;
+}
+
+.grid_marks .row div {
+    border-right: 2px solid var(--light-main);
+}
+
+.grid_marks div:last-child {
+    border: none;
 }
 
 .header_marks {
@@ -1720,6 +1761,34 @@ i.fa+input {
 
 .row_content div:first-child,
 .header_marks div:first-child {
+    color: var(--main-color)
+}
+
+.marks_other_block ul {
+    margin-top: 40px;
+}
+
+.marks_other_block ul li p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    color: var(--h1-color);
+}
+
+.marks_other_block ul li p:nth-child(1) {
+    font-weight: 500;
+}
+
+.marks_other_block ul li p:nth-child(2) {
+    margin-top: 24px;
+}
+
+.marks_other_block ul li {
+    margin-bottom: 40px;
+}
+
+.highlight_marks {
     color: var(--main-color)
 }
 
@@ -2092,7 +2161,8 @@ i.fa+input {
 
 .search_student_profile p:nth-child(2) select,
 .search_student_profile p:nth-child(3) select,
-.header_portfolio_student_block select {
+.header_portfolio_student_block select,
+.marks_block select {
     width: 100%;
     background: linear-gradient(144.07deg, rgba(255, 255, 255, 0.68) -9.11%, rgba(255, 255, 255, 0.544) 175.55%);
     box-shadow: 50px 60px 100px rgba(0, 0, 0, 0.05);
@@ -2122,7 +2192,8 @@ i.fa+input {
 }
 
 .search_student_profile select,
-.header_portfolio_student_block select {
+.header_portfolio_student_block select,
+.marks_block select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -2149,18 +2220,19 @@ i.fa+input {
 }
 
 .search_student_profile select,
-.header_portfolio_student_block select {
+.header_portfolio_student_block select,
+.marks_block select {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 22px;
-    /* identical to box height, or 137% */
     letter-spacing: 0.01em;
     color: #A6ACBE;
 }
 
 .search_student_profile option:not(:first-of-type),
-.header_portfolio_student_block option:not(:first-of-type) {
+.header_portfolio_student_block option:not(:first-of-type),
+.marks_block option:not(:first-of-type) {
     color: black;
 }
 
