@@ -41,11 +41,10 @@
                             {% else %}
                             <img class="profile_photo" src={% static "img/profile_male.png" %} alt="">
                             {% endif %}
-                            <img src="img/student_profile.png" alt="">
                         </div>
                         <div>
                             <ul>
-                                <li>{{ user.get_full_name }} {{ user.student.patronymic }}</li>
+                                <li>{{ user.student.name }} {{ user.student.patronymic }}</li>
                                 <li><span>Дата рождения:</span>{{ user.student.birth_date }}</li>
                                 <li><span>Страна:</span>Россия</li>
                                 <li><span>Родной город:</span>Тюмень</li>
@@ -54,15 +53,15 @@
                     </div>
                     <ul class="student_block_info" style="margin-top: 20px;">
                         <li>Контактные данные</li>
-                        <li><span>Моб. телефон:</span>89044967321</li>
+                        <li><span>Моб. телефон:</span>{{ user.student.phone }}</li>
                         <li><span>Email:</span>{{ user.email }}</li>
-                        <li><span>ID зачетной книжки:</span>15-01-001565</li>
+                        <li><span>ID зачетной книжки:</span>{{ user.student.record_book }}</li>
                     </ul>
                     <ul class="student_block_info">
                         <li>Подразделение</li>
-                        <li><span>Институт:</span>Строительный</li>
-                        <li><span>Направление:</span>Информационные системы и технологии, 09.03.02</li>
-                        <li><span>Группа:</span>ИСТб-15-1</li>
+                        <li><span>Институт:</span>{{ user.student.institute.name }}</li>
+                        <li><span>Направление:</span>{{ user.student.current_class.study_program.get_full_title }}</li>
+                        <li><span>Группа:</span>{{ user.student.current_class.title }}</li>
                     </ul>
                     <ul class="student_block_info">
                         <li>Характеристики</li>
