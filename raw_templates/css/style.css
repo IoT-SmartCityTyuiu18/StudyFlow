@@ -222,9 +222,14 @@ progress::-webkit-progress-value {
     box-shadow: 50px 60px 100px rgba(0, 0, 0, 0.05);
     border-radius: 30px;
     display: grid;
+    gap: 20px;
     grid-template-columns: 1fr 1fr;
     padding: 23px 20px;
-    margin-bottom: 10%;
+    margin-bottom: 20px;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 32px;
+    /* height: 200px; */
 }
 
 .name_prof p {
@@ -232,6 +237,11 @@ progress::-webkit-progress-value {
     grid-template-columns: 36px 1fr;
     align-items: center;
     margin-bottom: 17px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    color: #000000;
 }
 
 .name_prof span {
@@ -392,6 +402,11 @@ progress::-webkit-progress-value {
     font-size: 30px;
 }
 
+.sidebar_menu a:focus img {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
 .menu {
     display: grid;
     grid-template-columns: repeat( 12, minmax(80px, 1fr));
@@ -420,6 +435,7 @@ progress::-webkit-progress-value {
     width: 64px;
     height: 64px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .profile ul li {
@@ -1362,6 +1378,7 @@ i.fa+input {
     padding: 15px 25px;
     justify-self: end;
     margin-bottom: 24px;
+    font-size: 16px;
 }
 
 .sent_message div:first-child {
@@ -1384,6 +1401,7 @@ i.fa+input {
     background: #DDD5FF;
     border-radius: 20px;
     padding: 15px 25px;
+    font-size: 16px;
 }
 
 .received_message div:last-child {
@@ -1700,6 +1718,7 @@ i.fa+input {
     display: grid;
     grid-template-columns: 40px 320px 200px 1fr;
     height: 100%;
+    /* align-items: center; */
 }
 
 .row div {
@@ -1729,6 +1748,8 @@ i.fa+input {
 
 .grid_marks .row div {
     border-right: 2px solid var(--light-main);
+    display: grid;
+    align-content: center;
 }
 
 .grid_marks div:last-child {
@@ -2396,7 +2417,7 @@ i.fa+input {
     grid-template-columns: auto 1fr;
     gap: 24px;
     margin: 48px 0 40px 0;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .header_portfolio_student_block h1 {
@@ -2405,4 +2426,124 @@ i.fa+input {
 
 .header_portfolio_student_block select {
     width: 240px;
+}
+
+.no_active {
+    color: #969CBA
+}
+
+.grid_marks_student_page {
+    overflow: hidden;
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-height: 350px;
+    overflow-y: scroll;
+    padding-right: 30px;
+}
+
+.grid_marks_student_page .row div:nth-child(2) {
+    text-decoration: underline;
+}
+
+.grid_marks_student_page .row {
+    display: grid;
+    grid-template-columns: 40px 1fr 120px 110px 110px;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.grid_marks_student_page .row div {
+    border-right: 2px solid var(--light-main);
+    display: grid;
+    align-content: center;
+}
+
+.grid_marks_student_page div:last-child {
+    border: none;
+}
+
+.chart {
+    --scale: 100;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: repeat(var(--scale), minmax(0, 1fr)) 1.4rem;
+    grid-column-gap: 5px;
+    --line-every: 20;
+    background-image: linear-gradient(to bottom, #ccc 1px, transparent 1px);
+    background-size: 100% calc((100% - 1.4rem) / var(--scale) * var(--line-every));
+    /* other styles… */
+    margin: 2em auto 7em;
+    padding: 0 1em;
+    position: relative;
+    /* max-width: 70vw; */
+    height: 330px;
+}
+
+.chart::after {
+    bottom: 0;
+    content: ' ';
+    height: 1.4rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+.date {
+    align-items: flex-end;
+    display: flex;
+    font-weight: bold;
+    grid-row-start: -2;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: right;
+    color: #969CBA;
+    transform: rotate( -45deg);
+    margin-top: 80px;
+}
+
+.bar {
+    grid-row: var(--start) / -2;
+    background-image: linear-gradient(to right, #552EFF, rgba(85, 46, 255, 0.8), rgba(85, 46, 255, 0.7), rgba(85, 46, 255, 0.4), rgba(85, 46, 255, 0.2));
+    background-size: 1600% 100%;
+    background-position: calc(var(--start) * 1%) 0;
+    border-radius: 5px;
+    color: #000;
+    list-style: none;
+    position: relative;
+    width: 32px;
+    margin: 0 auto;
+}
+
+.overview .bar {
+    width: 20px;
+}
+
+.overview .chart {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 0
+}
+
+.value {
+    /* background: #fff; */
+    bottom: 100%;
+    display: inline-block;
+    left: 50%;
+    padding: 0 0.4em;
+    position: absolute;
+    transform: translate(-50%, -1px);
+}
+
+:root {
+    font-size: 80%;
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
 }
