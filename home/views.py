@@ -47,3 +47,10 @@ def s_profile(request):
         'student_profile_page.html',
         context={},
     )
+
+def marks(request):
+    return render(
+        request,
+        'marks_page.html',
+        context={},
+    )

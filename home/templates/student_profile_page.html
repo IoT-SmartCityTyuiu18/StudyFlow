@@ -9,29 +9,7 @@
             {% block content %}
             <div class="white">
                 <div class="white_content student_profile">
-                    <form action="#" class="search_student_profile">
-                        <p>
-                            <i style="line-height: 48px;" class="fa fa-search" aria-hidden="true"></i>
-                            <input type="search" placeholder="Поиск по группе, студентам">
-                        </p>
-                        <p class="select_arrow">
-                            <select name="#" id="#">
-                                <option value="" disabled selected>Выберите группу</option>
-                                <option value="#">Пункт 1</option>
-                                <option value="#">Пункт 2</option>
-                                <option value="#">Пункт 3</option>
-                            </select>
-                        </p>
-                        <p class="select_arrow">
-                            <select name="#" id="#">
-                                <option value="" disabled selected>Выберите студента</option>
-                                <option value="#">Пункт 1</option>
-                                <option value="#">Пункт 2</option>
-                                <option value="#">Пункт 3</option>
-                            </select>
-                        </p>
-                    </form>
-                    <h1>Личные данные студента</h1>
+                    <h1>Личный кабинет</h1>
                     <div class="student_photo_profile">
                         <div>
                             {% if user.student.avatar %}
@@ -75,7 +53,10 @@
                         </li>
                     </ul>
                     <div class="a_student_statistic">
-                        <a href="#">Статистика по студенту <img src={% static "img/icons/arrow_next.png" %} alt=""></a>
+                        <a href="student/marks">Моя статистика <img src={% static "img/icons/arrow_next.png" %} alt=""></a>
+                    </div>
+                    <div class="a_student_statistic">
+                        <a href="#">Редактировать профиль <img src={% static "img/icons/arrow_next.png" %} alt=""></a>
                     </div>
                 </div>
             </div>
